@@ -57,6 +57,18 @@
             android:name=".activities.InterestsActivity"
             android:theme="@style/Theme.Capture.NoActionBar" />
 
+        <!-- App Widget Provider -->
+        <receiver
+            android:name=".widget.LatestPostWidget"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/latest_post_widget_info" />
+        </receiver>
+
         <!-- FileProvider for camera access -->
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -1,5 +1,6 @@
 package com.pineapple.capture.fragment;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -50,6 +51,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 
 public class CameraFragment extends Fragment {
 
@@ -379,10 +383,15 @@ public class CameraFragment extends Fragment {
                     FirebaseFirestore.getInstance().collection("posts")
                         .add(postData)
                         .addOnSuccessListener(documentReference -> {
+                            // Success - post created and image uploaded
                             String postId = documentReference.getId();
                             Log.d("CameraFragment", "Post saved with ID: " + postId);
                             Toast.makeText(requireContext(), "Post uploaded successfully!", Toast.LENGTH_SHORT).show();
                             
+                            // Update the home screen widget
+                            updateWidget();
+                            
+                            // For testing: verify the post was saved by reading it back
                             FirebaseFirestore.getInstance().collection("posts").document(postId)
                                 .get()
                                 .addOnSuccessListener(postSnapshot -> {
@@ -462,5 +471,25 @@ public class CameraFragment extends Fragment {
                 getActivity().finish();
             }
         }
+    }
+
+    /**
+     * Update the home screen widget with the latest post
+     */
+    private void updateWidget() {
+        Intent intent = new Intent(requireContext(), com.pineapple.capture.widget.LatestPostWidget.class);
+        intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+        
+        // Use AppWidgetManager to get the widget IDs
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(requireContext());
+        int[] appWidgetIds = appWidgetManager.getAppWidgetIds(
+                new ComponentName(requireContext(), com.pineapple.capture.widget.LatestPostWidget.class));
+        
+        // Add widget IDs to the intent
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
+        
+        // Send broadcast to update widgets
+        requireContext().sendBroadcast(intent);
+        Log.d("CameraFragment", "Widget update broadcast sent");
     }
 }
