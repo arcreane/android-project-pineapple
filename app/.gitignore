@@ -1,1 +1,3 @@
 /build
+.gradle/file-system.probe
+.DS_Store

@@ -3,8 +3,55 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
+    <color name="purple_900">#FF240077</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#808080</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="dark_gray">#A9A9A9</color>
+
+    <!-- Apple-style dark mode colors -->
+    <color name="background_dark">#000000</color>
+    <color name="card_background">#1C1C1E</color>
+    <color name="card_background_elevated">#2C2C2E</color>
+    <color name="system_gray6">#1C1C1E</color>
+    <color name="system_gray5">#2C2C2E</color>
+    <color name="system_gray4">#3A3A3C</color>
+    <color name="system_gray3">#48484A</color>
+    <color name="system_gray2">#636366</color>
+    <color name="system_gray">#8E8E93</color>
+
+    <!-- App primary colors -->
+    <color name="primary_blue">#0A84FF</color>
+    <color name="secondary_blue">#5AC8FA</color>
+    <color name="primary_blue_transparent">#260A84FF</color>
+    <color name="primary_text">#FFFFFF</color>
+
+    <!-- System colors (Apple-inspired) -->
+    <color name="system_red">#FF453A</color>
+    <color name="system_green">#32D74B</color>
+    <color name="system_orange">#FF9F0A</color>
+    <color name="system_yellow">#FFD60A</color>
+    <color name="system_purple">#BF5AF2</color>
+
+    <!-- Timestamp background color -->
+    <color name="timestamp_background_color">#C65D22</color>
+
+    <color name="text_secondary">#8E8E93</color>
+    <color name="secondary_text">#8E8E93</color>
+    <color name="accent">#0A84FF</color>
+    <color name="error">#FF453A</color>
+    <color name="divider">#38383A</color>
+
+    <!-- Pastel Colors for Interest Chips -->
+    <color name="pastel_blue">#B3E5FC</color>
+    <color name="pastel_green">#C8E6C9</color>
+    <color name="pastel_purple">#E1BEE7</color>
+    <color name="pastel_pink">#F8BBD0</color>
+    <color name="pastel_orange">#FFCCBC</color>
+    <color name="pastel_yellow">#FFF9C4</color>
+    <color name="pastel_teal">#B2DFDB</color>
+    <color name="pastel_cyan">#B2EBF2</color>
 </resources>

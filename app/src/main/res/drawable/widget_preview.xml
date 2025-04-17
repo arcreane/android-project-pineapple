@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#333333" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+    
+    <!-- Post image placeholder -->
+    <item android:top="8dp" android:left="8dp" android:right="8dp" android:bottom="40dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#888888" />
+        </shape>
+    </item>
+    
+    <!-- Caption overlay at the top -->
+    <item android:top="8dp" android:left="8dp" android:right="8dp" android:height="40dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#80000000" />
+        </shape>
+    </item>
+    
+    <!-- Avatar placeholder -->
+    <item android:left="16dp" android:bottom="16dp" android:width="32dp" android:height="32dp">
+        <shape android:shape="oval">
+            <solid android:color="#CCCCCC" />
+        </shape>
+    </item>
+    
+    <!-- Username placeholder -->
+    <item android:left="56dp" android:bottom="16dp" android:width="80dp" android:height="16dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#CCCCCC" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+</layer-list> 

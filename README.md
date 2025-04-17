@@ -2,7 +2,32 @@
 
 # Capture - Android App
 
-A Java-based Android application.
+A Java-based Android application. Capture is a real-time social diary that lets you stay truly connected with your closest friends. Share spontaneous photos and thoughts directly to your friends’ home screens – as it happens. No filters, no algorithms, just raw, real-life moments.
+
+Whether it’s a quick smile or a funny thought – Capture makes every little moment meaningful. It’s not about likes or followers. It’s about living and sharing life together, in real time.
+
+## Project overview
+
+### Features
+
+- Take, post real-time pictures
+- Like, share, comments on posts
+- Lightweight, fast, and privacy-focused
+
+### Team Members
+
+- Phuong Khanh Pham
+- Natthanicha Vongjarit
+- Debojyoti Mishra
+- Bui Tien Quoc
+
+### Tech Stack
+
+- **Language**: Java
+- **Platform**: Android SDK (API level 26+)
+- **IDE**: Android Studio
+- **Version Control**: Git + GitHub
+- **CI/CD**: GitHub Actions
 
 ## Branching Strategy
 
@@ -76,7 +101,125 @@ When the develop branch is stable and ready for release:
 
 ## Development Setup
 
-[Add your development setup instructions here]
+### Requirements
+
+- Android Studio Iguana (2023.2.1) or newer
+- JDK 17 or higher
+- Android SDK with minimum API level 26 (Android 8.0 Oreo)
+- Git
+
+### Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/arcreane/android-project-pineapple.git
+   cd android-project-pineapple
+   ```
+
+2. Set up the git hooks:
+   ```bash
+   ./scripts/setup-hooks.sh
+   ```
+
+3. Open the project in Android Studio:
+   - Launch Android Studio
+   - Select "Open an existing project"
+   - Navigate to the cloned repository and click "Open"
+
+4. Sync the project with Gradle files:
+   - Android Studio should automatically sync
+   - If not, select "File > Sync Project with Gradle Files"
+
+5. Run the app:
+   - Connect an Android device or use an emulator
+   - Click the "Run" button (green triangle) in Android Studio
+
+### Troubleshooting
+
+- If you encounter Gradle sync issues, ensure you have the correct JDK version
+- For build errors, check the "Build" tab in Android Studio for specific error messages
+- If GitHub Actions CI builds fail but local builds succeed, check Java version compatibility
+
+## Contributing
+
+### First-Time Setup
+
+1. Fork the repository on GitHub:
+   - Visit the repository page on GitHub
+   - Click the "Fork" button in the top-right corner
+   - Select your account as the destination
+
+2. Clone your forked repository:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/android-project-pineapple.git
+   cd android-project-pineapple
+   ```
+
+3. Add the original repository as upstream:
+   ```bash
+   git remote add upstream https://github.com/arcreane/android-project-pineapple.git
+   ```
+
+### Making Contributions
+
+1. Sync your local develop branch:
+   ```bash
+   git checkout develop
+   git pull upstream develop
+   git push origin develop
+   ```
+
+2. Create a new feature branch:
+   ```bash
+   git checkout -b feature/your-feature-name develop
+   ```
+   Branch naming convention:
+   - `feature/*` for new features
+   - `bugfix/*` for bug fixes
+   - `docs/*` for documentation changes
+   - `hotfix/*` for urgent production fixes
+
+3. Make your changes:
+   - Write clear, concise commit messages following our convention:
+     ```bash
+     git commit -m "type(scope): description"
+     ```
+   - Types: feat, fix, docs, style, refactor, test, chore
+   - Example: `git commit -m "feat(login): add biometric authentication"`
+
+4. Push your changes:
+   ```bash
+   git push -u origin feature/your-feature-name
+   ```
+
+5. Create a Pull Request:
+   - Go to the original repository on GitHub
+   - Click "Pull Requests" > "New Pull Request"
+   - Select `develop` as the base branch
+   - Write a clear PR description explaining your changes
+   - Link any related issues
+
+6. Address review feedback:
+   - Make requested changes in your feature branch
+   - Commit and push updates
+   - The PR will update automatically
+
+7. After PR is merged:
+   ```bash
+   git checkout develop
+   git pull upstream develop
+   git push origin develop
+   git branch -d feature/your-feature-name
+   ```
+
+### Best Practices
+
+- Keep PRs focused and reasonably sized
+- Update your feature branch regularly with develop
+- Write meaningful commit messages
+- Add tests for new features
+- Update documentation as needed
+- Ensure CI checks pass before requesting review
 
 ## UML Diagram
 ![UML Diagram](UML.svg)

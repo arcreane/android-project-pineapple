@@ -1,0 +1,22 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow any authenticated user to read posts
+    match /posts/{postId} {
+      allow read: if true;  // Allow anyone to read posts
+      allow write: if request.auth != null;  // Only authenticated users can write
+    }
+    
+    // Allow users to read and write their own user document
+    match /users/{userId} {
+      allow read: if true;  // Allow anyone to read user profiles
+      allow write: if request.auth != null && request.auth.uid == userId;  // Only the user can write to their profile
+    }
+    
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+} 
