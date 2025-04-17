@@ -1,5 +1,6 @@
 *.iml
 .gradle
+.vscode
 /local.properties
 /.idea
 .DS_Store
@@ -20,7 +21,10 @@ out/
 
 # Gradle files
 .gradle/
-build/
+.gradle/**/*
+
+# IDE files
+.vscode/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -59,4 +63,20 @@ vcs.xml
 lint/intermediates/
 lint/generated/
 lint/outputs/
-lint/tmp/ 
+lint/tmp/
+
+# Gradle cache files
+.gradle/
+build/
+.idea/
+local.properties
+
+# Android Studio generated files
+*.iml
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Android Profiling
+*.hprof

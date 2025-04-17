@@ -5,13 +5,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import com.bumptech.glide.Glide;
 import com.pineapple.capture.R;
 
 public class ProfileActivity extends AppCompatActivity {
     private ProfileViewModel viewModel;
     private ImageView profileImage;
+    private TextView displayName;
     private TextView userName;
-    private TextView userBio;
+    private TextView userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +23,23 @@ public class ProfileActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
         
         profileImage = findViewById(R.id.profile_image);
-        userName = findViewById(R.id.user_name);
-        userBio = findViewById(R.id.user_bio);
+        displayName = findViewById(R.id.user_name);
+        userName = findViewById(R.id.username);
+        userEmail = findViewById(R.id.user_email);
 
-        // Observe profile data changes
-        viewModel.getUserProfile().observe(this, userProfile -> {
-            if (userProfile != null) {
-                userName.setText(userProfile.getName());
-                userBio.setText(userProfile.getBio());
-                // Load profile image using a library like Glide
+        // Observe user data changes
+        viewModel.getUserData().observe(this, user -> {
+            if (user != null) {
+                displayName.setText(user.getDisplayName());
+                userName.setText(user.getUsername());
+                userEmail.setText(user.getEmail());
+                String profileUrl = user.getPrimaryProfilePictureUrl();
+                if (profileUrl != null && !profileUrl.isEmpty()) {
+                    Glide.with(this)
+                            .load(profileUrl)
+                            .circleCrop()
+                            .into(profileImage);
+                }
             }
         });
     }

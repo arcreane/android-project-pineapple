@@ -21,7 +21,6 @@ public class FriendsActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.friends_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Observe friends list changes
         viewModel.getFriends().observe(this, friends -> {
             // Update RecyclerView adapter with new friends list
         });

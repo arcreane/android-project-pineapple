@@ -2,7 +2,32 @@
 
 # Capture - Android App
 
-A Java-based Android application.
+A Java-based Android application. Capture is a real-time social diary that lets you stay truly connected with your closest friends. Share spontaneous photos and thoughts directly to your friends’ home screens – as it happens. No filters, no algorithms, just raw, real-life moments.
+
+Whether it’s a quick smile or a funny thought – Capture makes every little moment meaningful. It’s not about likes or followers. It’s about living and sharing life together, in real time.
+
+## Project overview
+
+### Features
+
+- Take, post real-time pictures
+- Like, share, comments on posts
+- Lightweight, fast, and privacy-focused
+
+### Team Members
+
+- Phuong Khanh Pham
+- Natthanicha Vongjarit
+- Debojyoti Mishra
+- Bui Tien Quoc
+
+### Tech Stack
+
+- **Language**: Java
+- **Platform**: Android SDK (API level 26+)
+- **IDE**: Android Studio
+- **Version Control**: Git + GitHub
+- **CI/CD**: GitHub Actions
 
 ## Branching Strategy
 

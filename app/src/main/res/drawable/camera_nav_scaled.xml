@@ -1,0 +1,10 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="95dp"
+        android:height="95dp"
+        android:gravity="center">
+        <bitmap
+            android:src="@drawable/camera_nav_icon"
+            android:gravity="center" />
+    </item>
+</layer-list>

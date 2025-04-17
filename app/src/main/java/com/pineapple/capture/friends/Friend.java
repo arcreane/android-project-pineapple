@@ -6,7 +6,7 @@ public class Friend {
     private String profileImageUrl;
     private long friendsSince;
 
-    // Required empty constructor for Firestore
+    //empty constructor for Firestore
     public Friend() {}
 
     public Friend(String userId, String name, String profileImageUrl) {
@@ -16,7 +16,6 @@ public class Friend {
         this.friendsSince = System.currentTimeMillis();
     }
 
-    // Getters and setters
     public String getUserId() { return userId; }
     public void setUserId(String userId) { this.userId = userId; }
 
